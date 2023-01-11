@@ -8,7 +8,8 @@ use App\Models\PaymentApproval;
 class PaymentApprovalService
 {
     /**
-     *
+     * @param Payment $payment
+     * @param $userId
      */
     public function approvePayment(Payment $payment, $userId)
     {

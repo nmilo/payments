@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::apiResource('payments', PaymentController::class);
     Route::apiResource('travel_payments', TravelPaymentController::class);
 
-    Route::post('/approve_payment', [PaymentApprovalController::class, 'approvePayment']);
-    Route::post('/payments_report', [PaymentReportController::class, 'report']);
+    Route::post('/approve_payment/{payment}', [PaymentApprovalController::class, 'approvePayment']);
+    Route::get('/payments_report', [PaymentReportController::class, 'detailedReport']);
+    Route::get('/payments_sum', [PaymentReportController::class, 'paymentsSum']);
 });

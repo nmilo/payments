@@ -21,8 +21,6 @@ class CreatePaymentApprovalsTable extends Migration
             ->onUpdate('cascade')->onDelete('restrict');
 
             $table->unsignedBigInteger('payment_id');
-            $table->foreign('payment_id')->references('id')->on('payments')
-            ->onUpdate('cascade')->onDelete('restrict');
 
             $table->string('payment_type');
             $table->enum('status', ['approved', 'not_approved']);

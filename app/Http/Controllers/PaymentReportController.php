@@ -26,8 +26,18 @@ class PaymentReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function report()
+    public function detailedReport()
     {
-        return $this->paymentsReportService->report();
+        return $this->paymentsReportService->detailedReport();
+    }
+
+    /**
+     * Report payments
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function paymentsSum()
+    {
+        return $this->paymentsReportService->paymentsSum();
     }
 }
